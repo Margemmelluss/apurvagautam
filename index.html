@@ -6,6 +6,7 @@
   <title>Durlabh Gautam | Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- tsParticles library -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.min.js"></script>
 </head>
 <body>
@@ -87,7 +88,13 @@
     <p>&copy; 2026 Durlabh Gautam | All Rights Reserved</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  <!-- Load script safely after library -->
+  <script>
+    window.addEventListener('load', function() {
+      const script = document.createElement('script');
+      script.src = 'script.js';
+      document.body.appendChild(script);
+    });
+  </script>
 </body>
 </html>
