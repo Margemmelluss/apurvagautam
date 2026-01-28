@@ -33,5 +33,20 @@ document.querySelectorAll('nav ul li a').forEach(link => {
     target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+// Scroll fade-in effect
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+faders.forEach(fader => fader.classList.add('fade-in')); // add class if missing
+faders.forEach(fader => appearOnScroll.observe(fader));
+
 
 
