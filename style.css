@@ -1,4 +1,6 @@
-/* General */
+/* =========================
+   General Styles
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,9 +12,12 @@ body {
   background: #0f0f0f;
   color: #f5f5f5;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Navbar */
+/* =========================
+   Navbar
+========================= */
 nav {
   display: flex;
   justify-content: space-between;
@@ -39,15 +44,20 @@ nav ul {
 nav ul li a {
   color: #f5f5f5;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
   color: #00e5ff;
+  transform: scale(1.1);
 }
 
-/* Hero Section */
+/* =========================
+   Hero Section
+========================= */
 .hero {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,14 +87,17 @@ nav ul li a:hover {
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .btn:hover {
   background: #00b8cc;
+  transform: scale(1.05);
 }
 
-/* About Section */
+/* =========================
+   Sections
+========================= */
 .about, .projects, .contact {
   padding: 5rem 2rem;
   text-align: center;
@@ -96,9 +109,12 @@ nav ul li a:hover {
   gap: 1.5rem;
   justify-content: center;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Projects */
+/* =========================
+   Projects
+========================= */
 .project-container {
   display: flex;
   flex-wrap: wrap;
@@ -112,11 +128,13 @@ nav ul li a:hover {
   padding: 2rem;
   border-radius: 10px;
   width: 250px;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.3);
 }
 
 .project-card a {
@@ -124,9 +142,17 @@ nav ul li a:hover {
   margin-top: 1rem;
   color: #00e5ff;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
-/* Contact Form */
+.project-card a:hover {
+  color: #00b8cc;
+  text-decoration: underline;
+}
+
+/* =========================
+   Contact Form
+========================= */
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -139,13 +165,21 @@ nav ul li a:hover {
   padding: 0.8rem;
   border: none;
   border-radius: 5px;
+  background: #2a2a2a;
+  color: #f5f5f5;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+  outline: 2px solid #00e5ff;
 }
 
 #contact-form textarea {
   resize: none;
 }
 
-/* Footer */
+/* =========================
+   Footer
+========================= */
 footer {
   background: #0f0f0f;
   padding: 1rem;
@@ -153,12 +187,17 @@ footer {
   border-top: 1px solid #333;
 }
 
-/* Animations */
+/* =========================
+   Animations
+========================= */
 @keyframes slideIn {
   from {opacity: 0; transform: translateY(-50px);}
   to {opacity: 1; transform: translateY(0);}
 }
-/* Particle background */
+
+/* =========================
+   Particle Background
+========================= */
 #tsparticles {
   position: fixed;
   width: 100%;
@@ -167,17 +206,8 @@ footer {
   top: 0;
   left: 0;
 }
-/* Hero section text above particles */
-.hero {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-}
+
+/* Fade-in for sections and cards */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -188,5 +218,3 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
-
