@@ -1,9 +1,18 @@
-// Contact form alert
-document.getElementById("contact-form").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Thanks for reaching out! I will get back to you soon.");
-});
-// Particle background
+// =========================
+// Contact Form Submission
+// =========================
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Thanks for reaching out! I will get back to you soon.");
+      contactForm.reset(); // clears form after submission
+  });
+}
+
+// =========================
+// Particle Background
+// =========================
 tsParticles.load("tsparticles", {
   particles: {
     number: { value: 60 },
@@ -25,15 +34,23 @@ tsParticles.load("tsparticles", {
   },
   retina_detect: true
 });
-// Smooth scroll for nav links
+
+// =========================
+// Smooth Scroll for Navbar
+// =========================
 document.querySelectorAll('nav ul li a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
+    if(target){
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
-// Scroll fade-in effect
+
+// =========================
+// Fade-in Animations on Scroll
+// =========================
 const faders = document.querySelectorAll('.fade-in');
 
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -45,8 +62,5 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: 0.2 });
 
-faders.forEach(fader => fader.classList.add('fade-in')); // add class if missing
+// Observe all fade-in elements
 faders.forEach(fader => appearOnScroll.observe(fader));
-
-
-
