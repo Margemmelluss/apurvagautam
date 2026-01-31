@@ -43,13 +43,25 @@ section.visible{opacity:1;transform:translateY(0)}
 .contact-intro{margin:0 0 8px;color:var(--muted)}
 .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:row;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
 .contact-item{font-size:0.98rem}
-.contact-link{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--accent);position:relative;transition:filter 160ms ease}
+.contact-link{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;color:var(--accent);position:relative;transition:filter 160ms ease}
 .contact-link .icon{width:18px;height:18px;flex:0 0 18px;display:inline-block}
 .contact-link .icon path{fill:currentColor}
 .contact-link .contact-label{font-weight:500}
 .contact-link::before{content:'';position:absolute;inset:0;border-radius:10px;background:radial-gradient(circle at 30% 30%, rgba(var(--accent-rgb),0.18), rgba(var(--accent-rgb),0.06) 40%, transparent 60%);filter:blur(8px);z-index:-1;opacity:0.95}
 .contact-link:hover{filter:brightness(1.03)}
 .contact-link:focus-visible{outline:2px solid rgba(var(--accent-rgb),0.12);outline-offset:4px}
+
+.copy-btn{margin-left:8px;appearance:none;border:none;background:rgba(255,255,255,0.04);color:var(--text);padding:6px 8px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:transform 140ms ease,background 140ms ease,box-shadow 160ms ease}
+.copy-btn .icon{width:14px;height:14px}
+.copy-btn .copy-text{font-size:12px;line-height:1;opacity:0.98;margin-left:6px}
+.copy-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.copy-btn.copied{background:var(--accent);color:var(--btn-text);box-shadow:0 6px 18px rgba(var(--accent-rgb),0.24)}
+.copy-btn:focus-visible{outline:2px solid rgba(var(--accent-rgb),0.12);outline-offset:3px}
+@media (max-width:600px){
+  .contact-list{flex-direction:column;gap:10px}
+  .contact-link{width:100%;justify-content:center}
+  .copy-btn{margin-left:12px}
+}
 @media (max-width:600px){
   .contact-list{flex-direction:column;gap:10px}
   .contact-link{width:100%;justify-content:center}
