@@ -141,36 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
       setTimeout(() => { alert('Message sent!'); form.reset(); if (btn) { btn.disabled = false; btn.textContent = 'Send'; } }, 700);
     });
-
-    // wire up copy-to-clipboard buttons next to contact items
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', async (ev) => {
-        const text = btn.dataset.copy;
-        if (!text) return;
-        try {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            await navigator.clipboard.writeText(text);
-          } else {
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            ta.style.position = 'fixed';
-            ta.style.left = '-9999px';
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand('copy');
-            ta.remove();
-          }
-          const orig = btn.innerHTML;
-          btn.classList.add('copied');
-          btn.innerHTML = '<svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2l-3.5-3.5-1.4 1.4L9 19 20.5 7.5 19.1 6.1z"/></svg>';
-          // feedback
-          if (typeof showThemeToast === 'function') showThemeToast('Copied: ' + text);
-          setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 1500);
-        } catch (err) {
-          if (typeof showThemeToast === 'function') showThemeToast('Copy failed — select and copy manually');
-        }
-      });
-    });
   }
 
   // Make project buttons accessible: simple focus outlines
