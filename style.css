@@ -36,7 +36,22 @@ section.visible{opacity:1;transform:translateY(0)}
 .project-container{display:flex;gap:var(--gap);justify-content:center;flex-wrap:wrap}
 .project-card{background:var(--card);padding:20px;border-radius:10px;transition:transform 260ms ease,box-shadow 260ms ease;appearance:none;border:none;color:var(--text);cursor:pointer;font:inherit}
 .project-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 22px var(--accent)}
-
+/* Contact details (inline icon links, centered, glowy) */
+.contact-details{max-width:720px;margin:6px auto 20px;padding:0;border-radius:10px;background:transparent;box-shadow:none;color:var(--text);text-align:center}
+.contact-intro{margin:0 0 8px;color:var(--muted)}
+.contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:row;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+.contact-item{font-size:0.98rem}
+.contact-link{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--accent);position:relative;transition:filter 160ms ease}
+.contact-link .icon{width:18px;height:18px;flex:0 0 18px;display:inline-block}
+.contact-link .icon path{fill:currentColor}
+.contact-link .contact-label{font-weight:500}
+.contact-link::before{content:'';position:absolute;inset:0;border-radius:10px;background:radial-gradient(circle at 30% 30%, rgba(var(--accent-rgb),0.18), rgba(var(--accent-rgb),0.06) 40%, transparent 60%);filter:blur(8px);z-index:-1;opacity:0.95}
+.contact-link:hover{filter:brightness(1.03)}
+.contact-link:focus-visible{outline:2px solid rgba(var(--accent-rgb),0.12);outline-offset:4px}
+@media (max-width:600px){
+  .contact-list{flex-direction:column;gap:10px}
+  .contact-link{width:100%;justify-content:center}
+}
 #contact-form input,#contact-form textarea{display:block;width:min(720px,100%);margin:10px auto;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.35);color:var(--text);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02);resize:vertical;font-size:1rem}
 #contact-form textarea{min-height:120px}
 #contact-form input:focus,#contact-form textarea:focus{outline:none;box-shadow:0 0 12px rgba(0,229,255,0.12);border-color:var(--accent)}
