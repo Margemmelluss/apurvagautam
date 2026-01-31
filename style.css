@@ -1,158 +1,128 @@
-/* =========================
-   General Styles
-========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+:root{
+  --bg:#0f0f0f;
+  --text:#ffffff;
+  --muted:#cfcfcf;
+  --accent:#00e5ff;
+  --card:#1f1f1f;
+  --gap:20px;
+  --hero-stuck-top:20px;
+  --hero-stuck-left:20px;
 }
 
-body {
-  background: #0f0f0f;
-  color: #f5f5f5;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Roboto,sans-serif}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);scroll-behavior:smooth;overflow-x:hidden}
+
+#starfield{position:fixed;inset:0;z-index:0;pointer-events:none;display:block}
+
+main, footer{position:relative;z-index:3} /* raised so canvases sit behind content */
+#sand{position:fixed;inset:0;z-index:1;pointer-events:none;display:block}
+#ripples{position:fixed;inset:0;z-index:2;pointer-events:none;display:block}
+.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center}
+.hero-center{width:100%;display:flex;justify-content:center;align-items:center}
+.hero-content{display:flex;align-items:center;gap:var(--gap);transition:transform 320ms cubic-bezier(.2,.9,.2,1),opacity 220ms;will-change:transform,opacity}
+.hero-content.stuck{position:fixed;top:var(--hero-stuck-top);left:var(--hero-stuck-left);transform:none;box-shadow:0 6px 30px rgba(0,0,0,.4);border-radius:999px;z-index:3}
+
+.profile{width:clamp(80px,12vw,150px);height:clamp(80px,12vw,150px);border-radius:50%;object-fit:cover;box-shadow:0 0 25px var(--accent);animation:pulse 2s infinite alternate;transition:box-shadow 350ms ease,width 300ms ease,height 300ms ease}
+.hero-content.stuck .profile{width:72px;height:72px;box-shadow:0 0 18px var(--accent)}
+@keyframes pulse{0%{box-shadow:0 0 18px var(--accent)}100%{box-shadow:0 0 40px var(--accent)}}
+
+.hero-text h1{font-size:clamp(1.4rem,3.5vw,2rem);color:var(--accent);text-shadow:0 0 12px var(--accent);margin-bottom:6px}
+.hero-text p{font-size:clamp(.9rem,2vw,1rem);color:var(--muted)}
+
+section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(30px);transition:opacity 650ms ease-out,transform 650ms ease-out}
+section.visible{opacity:1;transform:translateY(0)}
+
+.project-container{display:flex;gap:var(--gap);justify-content:center;flex-wrap:wrap}
+.project-card{background:var(--card);padding:20px;border-radius:10px;transition:transform 260ms ease,box-shadow 260ms ease;appearance:none;border:none;color:var(--text);cursor:pointer;font:inherit}
+.project-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 22px var(--accent)}
+
+#contact-form input,#contact-form textarea{display:block;width:min(720px,100%);margin:10px auto;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.35);color:var(--text);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02);resize:vertical;font-size:1rem}
+#contact-form textarea{min-height:120px}
+#contact-form input:focus,#contact-form textarea:focus{outline:none;box-shadow:0 0 12px rgba(0,229,255,0.12);border-color:var(--accent)}
+
+/* Decorative blobs and shapes */
+.decor{position:absolute;pointer-events:auto;cursor:pointer}
+.decor:focus{outline:none;box-shadow:0 0 14px rgba(0,229,255,0.18);transform:scale(1.03)}
+.decor-tooltip{position:fixed;left:0;top:0;transform:translate(-50%,-120%);background:rgba(5,5,5,0.9);color:var(--text);padding:6px 10px;border-radius:6px;font-size:13px;pointer-events:none;opacity:0;transition:opacity 180ms ease}
+.decor-blob{filter:blur(22px);opacity:0.85;mix-blend-mode:screen;transition:transform 240ms ease,filter 240ms ease,opacity 240ms ease}
+.decor-blob:hover,.decor-blob:focus{filter:blur(14px);opacity:1;transform:scale(1.05)}
+.decor-blob-1{width:280px;height:180px;right:8%;bottom:10%;background:radial-gradient(circle at 30% 30%, var(--accent) 0%, var(--accent-2) 50%, transparent 65%);transform:translate3d(0,0,0);animation:float1 7.5s ease-in-out infinite}
+.decor-blob-2{width:220px;height:140px;left:6%;bottom:12%;background:radial-gradient(circle at 70% 40%, rgba(255,255,255,0.6), var(--accent) 40%, transparent 65%);animation:float2 9s ease-in-out infinite}
+
+.decor-ring{width:220px;height:220px;border-radius:50%;border:1.5px solid rgba(0,229,255,0.12);box-shadow:0 0 40px rgba(0,229,255,0.06) inset;transform:translate3d(0,0,0);transition:transform 360ms linear,box-shadow 360ms linear}
+.decor-ring-1{right:6%;top:12%;opacity:0.8;animation:spin 20s linear infinite}
+.decor-ring-1:hover,.decor-ring-1:focus{transform:scale(1.03) rotate(10deg);box-shadow:0 0 60px rgba(0,229,255,0.12)}
+.decor-ring-1.active{transform:scale(1.06) rotate(20deg);box-shadow:0 0 80px rgba(0,229,255,0.2)}
+
+/* Draggable shapes (non-functional, draggable across page) */
+.draggable{position:fixed;z-index:2;touch-action:none;user-select:none;pointer-events:none;transition:transform 360ms cubic-bezier(.2,.9,.2,1);will-change:transform,left,top}
+
+.shape-1{width:110px;height:110px;border-radius:50%;right:12%;top:22%;background:radial-gradient(circle at 30% 30%, rgba(0,200,255,0.95), rgba(0,80,255,0.45));box-shadow:0 6px 26px rgba(0,229,255,0.06);filter:blur(14px);opacity:0.92;mix-blend-mode:screen}
+.shape-2{width:84px;height:84px;left:8%;top:10%;background:linear-gradient(135deg, rgba(255,255,255,0.8), rgba(0,200,255,0.18));border-radius:12px;transform:rotate(10deg);filter:blur(10px);opacity:0.85;mix-blend-mode:screen}
+.shape-3{width:0;height:0;left:24%;top:62%;border-left:36px solid transparent;border-right:36px solid transparent;border-bottom:64px solid rgba(0,170,255,0.12);filter:blur(6px);opacity:0.78}
+.shape-4{width:78px;height:78px;left:66%;top:18%;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(0,200,255,0.15));clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);filter:blur(8px);opacity:0.82;mix-blend-mode:screen}
+.shape-5{width:48px;height:48px;right:18%;top:44%;border-radius:50%;border:3px solid rgba(0,229,255,0.16);box-shadow:0 0 18px rgba(0,229,255,0.03) inset;filter:blur(6px);opacity:0.9}
+.shape-6{width:80px;height:80px;left:52%;top:74%;transform:rotate(45deg);background:linear-gradient(135deg, rgba(255,255,255,0.7), rgba(0,120,255,0.18));filter:blur(16px);opacity:0.92;mix-blend-mode:screen}
+
+.hero-accent{display:block;margin-top:14px}
+.section-divider{display:block;width:100%;height:auto;margin-top:22px}
+
+@keyframes float1{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(-10px,-8px,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes float2{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(10px,-6px,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* Higher z for stuck hero so it overlaps decorative shapes */
+.hero-content.stuck{z-index:6}
+
+/* tooltip for decor */
+.decor-tooltip{z-index:50}
+
+/* theme variants (0..5). Use data-theme on body: default is 0 */
+body[data-theme="0"]{--accent:#00e5ff;--accent-2:#0078ff;--accent-rgb:0,229,255;--bg:linear-gradient(180deg,#071020,#0f0f0f);--card:rgba(31,31,31,0.88);--muted:#cfcfcf}
+body[data-theme="1"]{--accent:#ff8a66;--accent-2:#ff4e36;--accent-rgb:255,138,102;--bg:linear-gradient(180deg,#2b0704,#060612);--card:rgba(28,12,12,0.9);--muted:#f0c6b8}
+body[data-theme="2"]{--accent:#b388ff;--accent-2:#ff66d6;--accent-rgb:179,136,255;--bg:linear-gradient(180deg,#0f0312,#16051e);--card:rgba(28,18,34,0.9);--muted:#e6d6ff}
+body[data-theme="3"]{--accent:#6ef08b;--accent-2:#29b765;--accent-rgb:110,240,139;--bg:linear-gradient(180deg,#07160b,#062010);--card:rgba(12,24,14,0.9);--muted:#cfeadd}
+body[data-theme="4"]{--accent:#ffd166;--accent-2:#ff6b6b;--accent-rgb:255,209,102;--bg:linear-gradient(180deg,#1a0f05,#2b1808);--card:rgba(40,30,18,0.9);--muted:#fff0d1}
+body[data-theme="5"]{--accent:#ffffff;--accent-2:#cfcfcf;--accent-rgb:255,255,255;--bg:linear-gradient(180deg,#0b0b0b,#161616);--card:rgba(18,18,18,0.85);--muted:#bdbdbd;--btn-text:#0b0b0b}
+
+/* subtle page backdrop (uses --bg variable; allows gradients per theme) */
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:var(--bg);pointer-events:none;transition:background 480ms ease}
+
+/* improve accent-driven glows using theme rgb */
+.decor-ring{border:1.5px solid rgba(var(--accent-rgb),0.12);box-shadow:0 0 40px rgba(var(--accent-rgb),0.06) inset}
+.decor-ring-1:hover,.decor-ring-1:focus{box-shadow:0 0 60px rgba(var(--accent-rgb),0.12)}
+.decor-ring-1.active{box-shadow:0 0 80px rgba(var(--accent-rgb),0.18)}
+#contact-form input:focus,#contact-form textarea:focus{box-shadow:0 0 12px rgba(var(--accent-rgb),0.12);border-color:var(--accent);}
+
+#starfield{z-index:0}
+
+@media (prefers-reduced-motion: reduce){
+  .decor-blob-1,.decor-blob-2,.decor-ring-1{animation:none;filter:none}
+  .decor-blob:hover,.decor-blob:focus{transform:none;filter:none}
 }
 
-/* =========================
-   Navbar
-========================= */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  background: rgba(15, 15, 15, 0.95);
-  z-index: 100;
+
+
+.btn{background:var(--accent);padding:10px 20px;color:var(--btn-text,black);text-decoration:none;margin-top:10px;box-shadow:0 0 12px rgba(var(--accent-rgb),0.45);border:none;border-radius:8px;cursor:pointer;transition:transform 180ms ease,box-shadow 180ms ease,filter 180ms ease;will-change:transform,box-shadow,filter}
+.btn:hover{box-shadow:0 0 26px rgba(var(--accent-rgb),0.72);transform:scale(1.06);filter:brightness(1.08)}
+.btn:active{transform:scale(0.99)}
+.btn:focus-visible{outline:2px solid rgba(var(--accent-rgb),0.2);outline-offset:3px;box-shadow:0 0 28px rgba(var(--accent-rgb),0.28)}
+
+footer{padding:20px;text-align:center;background:#000}
+
+/* theme easter popup */
+.theme-toast{position:fixed;left:50%;bottom:40px;transform:translateX(-50%) translateY(20px);background:var(--card);color:var(--text);padding:12px 18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6);opacity:0;pointer-events:none;transition:opacity 260ms ease,transform 260ms cubic-bezier(.2,.9,.2,1);z-index:60}
+.theme-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.theme-toast p{margin:0;font-size:14px}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-content,.project-card,.btn,.profile,.hero-text h1,.hero-text p{transition:none;animation:none}
 }
 
-nav .logo {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.5rem;
-  color: #00e5ff;
+@media (max-width:600px){
+  .hero-center{padding:40px 12px}
+  .hero-content{gap:12px}
+  section{padding:60px 14px}
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-nav ul li a {
-  color: #f5f5f5;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s;
-}
-
-nav ul li a:hover {
-  color: #00e5ff;
-  transform: scale(1.1);
-}
-
-/* =========================
-   Hero Section
-========================= */
-.hero {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1f1f1f 100%);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  color: #00e5ff;
-  margin-bottom: 1rem;
-  animation: slideIn 2s ease-out;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.btn {
-  padding: 0.7rem 1.5rem;
-  border: none;
-  background: #00e5ff;
-  color: #0f0f0f;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.btn:hover {
-  background: #00b8cc;
-  transform: scale(1.05);
-}
-
-/* =========================
-   Sections
-========================= */
-.about, .projects, .contact {
-  padding: 5rem 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.skills {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-/* =========================
-   Projects
-========================= */
-.project-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.project-card {
-  background: #1f1f1f;
-  padding: 2rem;
-  border-radius: 10px;
-  width: 250px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.3);
-}
-
-.project-card a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #00e5ff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.project-card a:hover {
-  color: #00b8cc;
-  text-decoration: underline;
-}
-
-/* =========================
-   Contact Form
-========================= */
-#contac

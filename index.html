@@ -1,100 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Durlabh Gautam | Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- tsParticles library -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Particle background -->
-  <div id="tsparticles"></div>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <canvas id="sand" aria-hidden="true"></canvas>
+  <canvas id="ripples" aria-hidden="true"></canvas>
 
-  <!-- Navbar -->
-  <nav id="navbar">
-    <div class="logo">Durlabh Gautam</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-center">
+        <div id="heroContent" class="hero-content">
+          <img src="profile.jpg" alt="Durlabh Gautam" class="profile" loading="lazy">
+          <div class="hero-text">
+            <h1>Durlabh Gautam Apurva</h1>
+            <p>Student · Developer · Innovator</p>
+            <svg class="hero-accent" width="220" height="8" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0%" stop-color="rgba(0,229,255,0.95)" />
+                  <stop offset="100%" stop-color="rgba(0,120,255,0.85)" />
+                </linearGradient>
+              </defs>
+              <rect width="220" height="8" rx="4" fill="url(#g)"></rect>
+            </svg>
+          </div>
+        </div>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero fade-in">
-    <h1 class="animate-text">Hi, I’m Durlabh Gautam</h1>
-    <p>Student | Developer | Innovator</p>
-    <a href="#projects" class="btn">View My Projects</a>
-  </section>
+        <div class="decor decor-blob decor-blob-1" role="button" tabindex="0" data-target="#projects" aria-label="Go to projects"></div>
+        <div class="decor decor-blob decor-blob-2" role="button" tabindex="0" data-target="#contact" aria-label="Contact me"></div>
+        <div class="decor decor-ring decor-ring-1" role="button" tabindex="0" data-action="toggle-theme" aria-label="Toggle theme"></div>
 
-  <!-- About Section -->
-  <section id="about" class="about fade-in">
-    <h2>About Me</h2>
-    <p>
-      I am a student at New Horizon EBSS Butwal, passionate about software development, innovation, and organizing events. 
-      I have experience with React, HTML, CSS, JavaScript, and Android app development. 
-    </p>
-    <ul class="skills">
-      <li>HTML / CSS / JavaScript</li>
-      <li>React.js / Framer Motion</li>
-      <li>Java / Android Studio</li>
-      <li>GitHub / Git</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects fade-in">
-    <h2>Projects</h2>
-    <div class="project-container">
-      <div class="project-card fade-in">
-        <h3>SculptByte</h3>
-        <p>Creative and software projects hub.</p>
-        <p><strong>Tech:</strong> React, HTML, CSS</p>
-        <a href="#" target="_blank">View Code</a>
+        <!-- Draggable decorative shapes (non-functional) -->
+        <div class="draggable shape shape-1" aria-hidden="true" data-initial-left="84%" data-initial-top="24%"></div>
+        <div class="draggable shape shape-2" aria-hidden="true" data-initial-left="8%" data-initial-top="14%"></div>
+        <div class="draggable shape shape-3" aria-hidden="true" data-initial-left="24%" data-initial-top="62%"></div>
+        <div class="draggable shape shape-4" aria-hidden="true" data-initial-left="66%" data-initial-top="18%"></div>
+        <div class="draggable shape shape-5" aria-hidden="true" data-initial-left="78%" data-initial-top="46%"></div>
+        <div class="draggable shape shape-6" aria-hidden="true" data-initial-left="52%" data-initial-top="74%"></div>
       </div>
-      <div class="project-card fade-in">
-        <h3>NHinsights</h3>
-        <p>Anonymous teacher feedback system.</p>
-        <p><strong>Tech:</strong> React, Node.js</p>
-        <a href="#" target="_blank">View Code</a>
+
+      <svg class="section-divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" aria-hidden="true" focusable="false">
+        <path d="M0,0 C300,60 900,0 1200,60 L1200,60 L0,60 Z" fill="#060606" opacity="0.08"></path>
+      </svg>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a student passionate about software development, innovation, and organizing projects. I build clean, accessible interfaces and enjoy open-source collaboration.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="project-container">
+        <button class="project-card" type="button">SculptByte</button>
+        <button class="project-card" type="button">NHinsights</button>
+        <button class="project-card" type="button">InnoQuest</button>
       </div>
-      <div class="project-card fade-in">
-        <h3>InnoQuest</h3>
-        <p>Science exhibition project “Journey of Innovation”.</p>
-        <p><strong>Tech:</strong> HTML, CSS, JS</p>
-        <a href="#" target="_blank">View Code</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact fade-in">
-    <h2>Contact Me</h2>
-    <p>You can reach me via email or connect on social platforms.</p>
-    <form id="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <form id="contact-form" aria-label="Contact form">
+        <input name="name" type="text" placeholder="Name" required aria-label="Name">
+        <input name="email" type="email" placeholder="Email" required aria-label="Email">
+        <textarea name="message" placeholder="Message" required aria-label="Message"></textarea>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Durlabh Gautam | All Rights Reserved</p>
-  </footer>
-
-  <!-- Load script safely after library -->
-  <script>
-    window.addEventListener('load', function() {
-      const script = document.createElement('script');
-      script.src = 'script.js';
-      document.body.appendChild(script);
-    });
-  </script>
+  <footer>© 2026 Durlabh Gautam — apurvagautam.me</footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
