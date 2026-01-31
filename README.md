@@ -66,8 +66,6 @@ Please keep changes small and focused; add tests or manual verification steps fo
 ---
 
 ## ✉️ Contact
-Apurva Gautam: apurvagautam675@gmail.com
-               durlabhgautamapurva@newhorizon.edu.np
-               sculptbyte@gmail.com
+Apurva Gautam: apurvagautam675@gmail.com   durlabhgautamapurva@newhorizon.edu.np  sculptbyte@gmail.com
 
                +9779804479062
