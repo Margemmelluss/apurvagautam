@@ -133,6 +133,20 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:var(--bg);p
 
 footer{padding:20px;text-align:center;background:#000}
 
+/* social links row (above footer) */
+.socials{display:flex;gap:14px;justify-content:center;align-items:center;margin:18px 0 8px}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;color:var(--accent);position:relative;text-decoration:none;transition:transform 180ms cubic-bezier(.2,.9,.2,1),box-shadow 180ms ease}
+.social-link .social-icon{width:20px;height:20px;display:block}
+.social-link::before{content:'';position:absolute;inset:0;border-radius:10px;background:radial-gradient(circle at 30% 30%, rgba(var(--accent-rgb),0.22), rgba(var(--accent-rgb),0.06) 40%, transparent 60%);filter:blur(10px);z-index:-1;opacity:0.95;transition:opacity 260ms ease,transform 260ms ease}
+.social-link:hover{transform:translateY(-6px) scale(1.06)}
+.social-link:active{transform:translateY(-3px) scale(0.98)}
+.social-link:focus-visible{outline:2px solid rgba(var(--accent-rgb),0.12);outline-offset:4px}
+
+@media (prefers-reduced-motion: reduce){
+  .social-link{transition:none}
+  .social-link:hover{transform:none}
+}
+
 /* theme easter popup */
 .theme-toast{position:fixed;left:50%;bottom:40px;transform:translateX(-50%) translateY(20px);background:var(--card);color:var(--text);padding:12px 18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6);opacity:0;pointer-events:none;transition:opacity 260ms ease,transform 260ms cubic-bezier(.2,.9,.2,1);z-index:60}
 .theme-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
