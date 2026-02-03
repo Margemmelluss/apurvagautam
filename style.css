@@ -158,30 +158,8 @@ footer{padding:20px;text-align:center;background:#000}
 
 @media (max-width:600px){
   .hero-center{padding:40px 12px}
-  .hero-content{gap:12px;flex-direction:column;text-align:center}
-  .hero-content.stuck{left:10px;top:10px}
-  .hero-text h1{font-size:1.3rem}
-  .hero-text p{font-size:0.9rem}
+  .hero-content{gap:12px}
   section{padding:60px 14px}
-  .project-container{flex-direction:column;gap:14px}
-  .project-card{width:100%;max-width:400px;margin:0 auto}
-  #contact-form input,#contact-form textarea{width:100%;font-size:16px}
-  .contact-details{padding:0 8px}
-  .contact-intro{font-size:14px}
-  .contact-list{flex-direction:column;gap:12px}
-  .contact-link{width:100%;max-width:320px;margin:0 auto;justify-content:center;padding:10px 14px}
-  .contact-label{font-size:13px;word-break:break-all}
-  .socials{gap:12px;flex-wrap:wrap;padding:0 12px}
-  .social-link{width:40px;height:40px}
-  .social-icon{width:18px;height:18px}
-  .decor-blob-1,.decor-blob-2,.decor-ring{display:none}
-  .draggable{display:none}
-  footer{font-size:13px;padding:16px 12px}
-  .theme-toast{bottom:20px;max-width:90%;font-size:13px}
-  /* ensure canvas backgrounds stay visible on mobile */
-  #starfield{display:block;visibility:visible;opacity:1}
-  #sand{display:block;visibility:visible;opacity:1}
-  #ripples{display:block;visibility:visible;opacity:1}
 }
 
 
