@@ -178,5 +178,10 @@ footer{padding:20px;text-align:center;background:#000}
   .draggable{display:none}
   footer{font-size:13px;padding:16px 12px}
   .theme-toast{bottom:20px;max-width:90%;font-size:13px}
+  /* ensure canvas backgrounds stay visible on mobile */
+  #starfield{display:block;visibility:visible;opacity:1}
+  #sand{display:block;visibility:visible;opacity:1}
+  #ripples{display:block;visibility:visible;opacity:1}
 }
+
 
