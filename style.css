@@ -38,8 +38,8 @@ main, footer{position:relative;z-index:3} /* raised so canvases sit behind conte
 section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(30px);transition:opacity 650ms ease-out,transform 650ms ease-out}
 section.visible{opacity:1;transform:translateY(0)}
 
-.project-container{display:flex;gap:var(--gap);justify-content:center;flex-wrap:wrap}
-.project-card{background:var(--card);padding:20px;border-radius:10px;transition:transform 260ms ease,box-shadow 260ms ease;appearance:none;border:none;color:var(--text);cursor:pointer;font:inherit}
+.project-container{display:flex;gap:var(--gap);justify-content:center;flex-wrap:wrap;margin-top:30px}
+.project-card{background:var(--card);padding:20px;border-radius:10px;transition:transform 260ms ease,box-shadow 260ms ease;appearance:none;border:none;color:var(--text);cursor:pointer;font:inherit;text-decoration:none;display:inline-block}
 .project-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 22px var(--accent)}
 /* Contact details (inline icon links, centered, glowy) */
 .contact-details{max-width:720px;margin:6px auto 20px;padding:0;border-radius:10px;background:transparent;box-shadow:none;color:var(--text);text-align:center}
