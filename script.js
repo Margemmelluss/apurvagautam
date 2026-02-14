@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Make project buttons accessible: simple focus outlines
   document.querySelectorAll('.project-card').forEach(b => {
-    b.addEventListener('click', () => { b.blur(); alert(b.textContent + ' — project placeholder'); });
+    b.addEventListener('click', () => { b.blur(); });
   });
 
   // Interactive decorative elements: tooltips, click actions, keyboard
