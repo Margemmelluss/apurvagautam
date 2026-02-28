@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PracticeSet - MCQ Competitive Exam Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>PracticeSet</h1>
-    <p>A practice environment for various MCQ-based competitive exams.</p>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+
+    <main>
+        <section class="hero scroll-section visible" aria-label="PracticeSet intro">
+            <div class="content">
+                <h1>PracticeSet</h1>
+                <p class="hero-sub">Practice environment for MCQ-based competitive exams. Choose an exam, open a set, and start solving.</p>
+            </div>
+        </section>
+
+        <section class="exam-section scroll-section" aria-label="Exam sets">
+            <div class="content">
+                <h2 class="section-title">Exam Sets</h2>
+                <div class="exam-grid">
+                    <article class="exam-card">
+                        <h3 class="exam-name">St. Xaviers Entrance Exam</h3>
+                        <div class="sets">
+                            <a class="set-link" href="./tests/st-xaviers/set-1.html">Set-1</a>
+                            <a class="set-link" href="./tests/st-xaviers/set-2.html">Set-2</a>
+                            <a class="set-link" href="./tests/st-xaviers/set-3.html">Set-3</a>
+                        </div>
+                    </article>
+
+                    <article class="exam-card">
+                        <h3 class="exam-name">NEB +2 Entrance Model</h3>
+                        <div class="sets">
+                            <a class="set-link" href="./tests/neb-plus2/set-1.html">Set-1</a>
+                            <a class="set-link" href="./tests/neb-plus2/set-2.html">Set-2</a>
+                            <a class="set-link" href="./tests/neb-plus2/set-3.html">Set-3</a>
+                        </div>
+                    </article>
+
+                    <article class="exam-card">
+                        <h3 class="exam-name">Loksewa Practice Series</h3>
+                        <div class="sets">
+                            <a class="set-link" href="./tests/loksewa/set-1.html">Set-1</a>
+                            <a class="set-link" href="./tests/loksewa/set-2.html">Set-2</a>
+                            <a class="set-link" href="./tests/loksewa/set-3.html">Set-3</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>
