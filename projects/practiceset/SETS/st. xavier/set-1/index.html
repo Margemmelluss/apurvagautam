@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Xavier's Entrance Exam - Set 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1711;
+            --bg-2: #16261d;
+            --text: #f2f6ef;
+            --muted: #c4d2c2;
+            --accent: #8dcf7b;
+            --accent-rgb: 141, 207, 123;
+            --card: rgba(30, 44, 35, 0.74);
+            --border: rgba(171, 214, 158, 0.28);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            background: var(--bg);
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(110, 160, 110, 0.14), transparent 42%),
+                radial-gradient(circle at 85% 80%, rgba(96, 140, 112, 0.16), transparent 40%),
+                fixed linear-gradient(180deg, var(--bg), var(--bg-2));
+            background-attachment: fixed;
+            color: var(--text);
+            font-family: Roboto, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.5;
+            width: 100vw;
+        }
+
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
+
+        header {
+            position: relative;
+            z-index: 2;
+            background: rgba(30, 44, 35, 0.5);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(171, 214, 158, 0.2);
+            padding: 16px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: "Merriweather", Georgia, serif;
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(88, 130, 92, 0.38);
+        }
+
+        header p {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(141, 207, 123, 0.3);
+        }
+
+        header .disclaimer-text {
+            color: rgba(196, 210, 194, 0.85);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+        }
+
+        .question-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .question-num {
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .question-text {
+            color: var(--text);
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: rgba(50, 70, 56, 0.4);
+            border: 1px solid rgba(141, 207, 123, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 220ms ease;
+        }
+
+        .option:hover {
+            background: rgba(80, 110, 90, 0.5);
+            border-color: rgba(141, 207, 123, 0.4);
+            transform: translateX(4px);
+        }
+
+        .option input[type="radio"] {
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+
+        .option label {
+            flex: 1;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .submit-btn {
+            display: block;
+            margin: 40px auto;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, rgba(141, 207, 123, 0.2), rgba(141, 207, 123, 0.08));
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 280ms ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, rgba(141, 207, 123, 0.3), rgba(141, 207, 123, 0.15));
+            box-shadow: 0 8px 20px rgba(141, 207, 123, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .reset-btn {
+            display: block;
+            margin: 16px auto 40px;
+            padding: 12px 28px;
+            background: rgba(196, 210, 194, 0.1);
+            border: 2px solid rgba(196, 210, 194, 0.5);
+            border-radius: 8px;
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 280ms ease;
+        }
+
+        .reset-btn:hover {
+            background: rgba(196, 210, 194, 0.18);
+            border-color: rgba(196, 210, 194, 0.75);
+            color: var(--text);
+        }
+
+        .reset-btn:active {
+            transform: scale(0.98);
+        }
+
+        .start-btn {
+            display: block;
+            margin: 60px auto 40px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, rgba(141, 207, 123, 0.25), rgba(141, 207, 123, 0.1));
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            color: var(--accent);
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 280ms ease;
+        }
+
+        .start-btn:hover {
+            background: linear-gradient(135deg, rgba(141, 207, 123, 0.35), rgba(141, 207, 123, 0.18));
+            box-shadow: 0 10px 28px rgba(141, 207, 123, 0.3);
+            transform: translateY(-3px);
+        }
+
+        #questionsContainer {
+            display: none;
+        }
+
+        #questionsContainer.show {
+            display: block;
+        }
+
+        .submit-reset-btns {
+            display: none;
+        }
+
+        .submit-reset-btns.show {
+            display: block;
+        }
+
+        .show-answers-btn {
+            display: none;
+            margin: 16px auto;
+            padding: 12px 28px;
+            background: rgba(141, 207, 123, 0.15);
+            border: 2px solid rgba(141, 207, 123, 0.6);
+            border-radius: 8px;
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 280ms ease;
+        }
+
+        .show-answers-btn.show {
+            display: block;
+        }
+
+        .show-answers-btn:hover {
+            background: rgba(141, 207, 123, 0.25);
+            border-color: var(--accent);
+            box-shadow: 0 6px 16px rgba(141, 207, 123, 0.2);
+        }
+
+        .option.correct {
+            border: 2px solid #4ade80 !important;
+            background: rgba(74, 222, 128, 0.1) !important;
+        }
+
+        .option.wrong {
+            border: 2px solid #ef4444 !important;
+            background: rgba(239, 68, 68, 0.1) !important;
+        }
+
+        .option input[type="radio"]:disabled {
+            cursor: not-allowed;
+        }
+
+        .result {
+            background: rgba(30, 44, 35, 0.85);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            text-align: center;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result h2 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .result p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding: 16px 12px 40px;
+            }
+
+            .question-container {
+                padding: 18px;
+            }
+
+            .option {
+                padding: 10px 14px;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+
+    <header>
+        <h1>St. Xavier's Entrance Exam</h1>
+        <p>Set 1</p>
+        <p class="disclaimer-text">📋 Questions related to mathematics are currently not available but you can check those from the file given at the end of the test.</p>
+    </header>
+
+    <main>
+        <form id="testForm">
+            <button type="button" id="startBtn" class="start-btn">Start Test</button>
+            <div id="questionsContainer"></div>
+            <div class="submit-reset-btns">
+                <button type="submit" class="submit-btn">Submit Test</button>
+                <button type="button" id="resetBtn" class="reset-btn">Reset Answers</button>
+                <button type="button" id="showAnswersBtn" class="show-answers-btn">Show Answers</button>
+            </div>
+        </form>
+
+        <div id="result" class="result">
+            <h2 id="resultScore"></h2>
+            <p id="resultMessage"></p>
+        </div>
+    </main>
+
+    <script src="./questions.js"></script>
+    <script>
+        (() => {
+            // Starfield background
+            const canvas = document.getElementById('starfield');
+            const ctx = canvas.getContext('2d');
+            const stars = [];
+            const STAR_COUNT = 120;
+            const GLOW_COLORS = ['194,218,176', '169,201,157', '217,228,204'];
+            let viewportWidth = window.innerWidth;
+            let viewportHeight = window.innerHeight;
+
+            function resize() {
+                viewportWidth = window.innerWidth;
+                viewportHeight = window.innerHeight;
+                const dpr = Math.max(1, window.devicePixelRatio || 1);
+                const w = Math.ceil((viewportWidth + 2) * dpr);
+                const h = Math.ceil((viewportHeight + 2) * dpr);
+                canvas.width = w;
+                canvas.height = h;
+                canvas.style.width = `${viewportWidth + 2}px`;
+                canvas.style.height = `${viewportHeight + 2}px`;
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                ctx.scale(dpr, dpr);
+            }
+
+            function createStars() {
+                stars.length = 0;
+                for (let i = 0; i < STAR_COUNT; i++) {
+                    const speed = Math.random() * 0.12 + 0.02;
+                    stars.push({
+                        x: Math.random() * viewportWidth,
+                        y: Math.random() * viewportHeight,
+                        r: Math.random() * 1.5 + 0.45,
+                        a: Math.random() * 0.65 + 0.25,
+                        twinkle: Math.random() * 0.02 + 0.004,
+                        vy: speed,
+                        vx: (Math.random() - 0.5) * 0.08,
+                        color: GLOW_COLORS[Math.floor(Math.random() * GLOW_COLORS.length)]
+                    });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, viewportWidth + 2, viewportHeight + 2);
+                for (const s of stars) {
+                    s.x += s.vx;
+                    s.y += s.vy;
+                    if (s.y > viewportHeight + 6) s.y = -6;
+                    if (s.x > viewportWidth + 6) s.x = -6;
+                    if (s.x < -6) s.x = viewportWidth + 6;
+
+                    s.a += (Math.random() - 0.5) * s.twinkle;
+                    if (s.a < 0.15) s.a = 0.15;
+                    if (s.a > 1) s.a = 1;
+
+                    ctx.beginPath();
+                    ctx.fillStyle = `rgba(${s.color},${s.a})`;
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', () => {
+                resize();
+                createStars();
+            });
+
+            resize();
+            createStars();
+            draw();
+
+            // Render all questions dynamically from questions.js
+            const container = document.getElementById('questionsContainer');
+            questionsData.forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = 'question-container';
+                div.innerHTML = `
+                    <div class="question-num">Question ${idx + 1}</div>
+                    <div class="question-text">${item.q}</div>
+                    <div class="options">
+                        ${item.opts.map((opt, optIdx) => `
+                            <label class="option">
+                                <input type="radio" name="q${idx}" value="${optIdx}">
+                                <span>${String.fromCharCode(97 + optIdx)}) ${opt}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            document.getElementById('startBtn').addEventListener('click', () => {
+                document.getElementById('questionsContainer').classList.add('show');
+                document.querySelector('.submit-reset-btns').classList.add('show');
+                document.getElementById('startBtn').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('questionsContainer').offsetTop - 100, behavior: 'smooth' });
+            });
+
+            document.getElementById('testForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                let score = 0;
+                questionsData.forEach((item, idx) => {
+                    const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+                    if (selected && parseInt(selected.value) === item.ans) {
+                        score++;
+                    }
+                });
+
+                const resultDiv = document.getElementById('result');
+                const percentage = Math.round((score / questionsData.length) * 100);
+                document.getElementById('resultScore').textContent = `${score} / ${questionsData.length}`;
+                document.getElementById('resultMessage').textContent = `You scored ${percentage}%`;
+                resultDiv.classList.add('show');
+                document.getElementById('showAnswersBtn').classList.add('show');
+                window.scrollTo({ top: resultDiv.offsetTop - 100, behavior: 'smooth' });
+            });
+
+            document.getElementById('resetBtn').addEventListener('click', () => {
+                document.querySelectorAll(`input[type="radio"]`).forEach(radio => {
+                    radio.checked = false;
+                    radio.disabled = false;
+                });
+                document.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('correct', 'wrong');
+                });
+                document.getElementById('result').classList.remove('show');
+                document.getElementById('showAnswersBtn').classList.remove('show');
+                window.scrollTo({ top: document.getElementById('questionsContainer').offsetTop - 100, behavior: 'smooth' });
+            });
+
+            document.getElementById('showAnswersBtn').addEventListener('click', () => {
+                questionsData.forEach((item, qIdx) => {
+                    const allOptions = document.querySelectorAll(`input[name="q${qIdx}"]`);
+                    const selectedRadio = document.querySelector(`input[name="q${qIdx}"]:checked`);
+                    const selectedIdx = selectedRadio ? parseInt(selectedRadio.value) : -1;
+
+                    allOptions.forEach((radio, optIdx) => {
+                        radio.disabled = true;
+                        const optionLabel = radio.closest('.option');
+                        optionLabel.classList.remove('correct', 'wrong');
+
+                        if (optIdx === item.ans) {
+                            optionLabel.classList.add('correct');
+                        } else if (selectedIdx === optIdx && selectedIdx !== item.ans) {
+                            optionLabel.classList.add('wrong');
+                        }
+                    });
+                });
+                window.scrollTo({ top: document.getElementById('questionsContainer').offsetTop - 100, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+</html>
