@@ -1,0 +1,305 @@
+St. Xavier's Entrance exam (set-2)
+
+1. Astronomical unit (AU) is distance between Earth and Sun. 1 AU =
+a) 1.496 x 10^8 Km
+b) 9.46 x 10^12 Km
+c) 3.084 x 10^13K.m
+d) None
+2. Who discovered electron?
+a) Thomson
+b) Goldstein
+c) Rutherford
+d) Chadwick
+3. The magnitude of the sum of the two vectors is equal to the difference of their magnitudes. What is the angle
+between.the vectors?
+a) 00
+b) 450
+c) 900
+d) 180°
+4. A particle is moving on a straight line path with constant acceleration directed along the direction of
+instantaneous velocity which of the following statement is true?
+a) Particle may reverse the direction of motion.
+b) Distance covered = magnitude of displacement.
+c) Average velocity is less than average speed.
+d) Average velocity = instantaneous velocity.
+5. A ball is projected from the top of a tower at an angle 60° with the vertical. What happen to the vertical
+component of its velocity?
+a) Increases continuously.
+b) Decreases continuously.
+c) Remains unchanged.
+d) First decreases and then increases.
+6. A particle moving along a circular path due to a centripetal force having constant magnitude is an example of
+motion with:
+a) Constant speed and velocity.
+b) Variable speed and velocity.
+c) Variable speed and constant velocity.
+d) Constant speed and variable velocity.
+7. A rod of mass M and length L is lying on a horizontal table. The work done in making it stand on one end will
+be: g
+a) MgL
+b) MgL/2
+c) MgL/4
+d) 2MgL
+8. A body weights:
+a) Very slightly greater at night
+b) Very slightly less at night.
+c) Exactly equal at day & night.
+d) Zero at night.
+9. Two vessels have different base area. They are filled with water to the same height. If the amount of water in one
+be 4 times that in the other, then the ratio of pressure on their bottom will be:
+a) 16:1
+b) 8:1
+c) 4:1
+d) 1:1
+10. The speed of light in air is 3 x 108 m/s. What will be its speed in diamond whose refractive index is 2.4?
+a) 3 x 10^8 mls
+b) 330 m/s
+
+c) 1.25 x 10^8 m/s d) 2.24 x 10^8 m/s
+11. Critical angle for water is:
+a) 24°
+b) 49°
+c) 42°
+d) 35°
+12. The pressure of H2 gas at a gas thermometer is 80cm at 0°C, 110cm at 100°C. At what temperature will it record
+95cm pressure?
+a) 50°C
+b) 75°C
+c) 95°C
+d) 150°C
+13. Heat required to raise the temperature a body through 1°C is known as:
+a) Specific heat capacity
+b) Water equivalent,
+c) Molar specification
+d) Thermal c aprtcity
+14. The diameter of wire is reduced to half. Now the resistance changes by factor:
+a) 2
+b) 4
+c) 8
+d) 16
+15. Which of the fore wing is called red planet?
+a) Venus
+b) Mercury
+c) Mars
+d) Jupiter
+16. The waste material present in an ore is called
+a) Flux
+b) Alloy
+c) Gangue
+d) Slag
+17. Vapour density of a gas is 22. Its molecular weight will be:
+a) 33
+b) 22
+c) 44
+d) 11
+18. If 30g of Mg and 30 g of O2 are reacted, then the residual mixture contains
+a) 40g MgO + 20g O2
+b) 45g MgO+ 15g O2
+c) 50g MgO+ 10g O2
+d) 60g MgO only
+19. Which of the following set of quantum number is not possible?
+a) n = 2 l = 1 m = 0 s = +1/2
+b) n = 2 l=2 m = +1 s = -1/2
+c) n= 2 1=1 m = -1 s = +1/2
+d) n = 2 1=1 m = 0 s = -1/2
+20. Radioactivity was discovered by:
+a) Henry Becquerel
+b) Rutherford
+c) J.J Thompson
+d) Madam Curie
+21. Which of the following expression at pressure represents Chlare's law?
+a) V α 1/T b) V α1/T2
+c) Vα T d) V=d
+22. Solid CO2 is an example of:
+a) Ionic crystal b) Covalent crystal
+c) Metallic crystral d) Molecular crystal
+23. Which bond has maximum M.P. and B.P?
+a) Ionic
+b) Covalent
+c) CO-ordinate covalent
+d) Hydrogen bond
+24. The atomic no. of an elemeet is 38. In which block do it lies?
+a) s-block b) p-blcck
+c) d-block d) f-block
+25. During fermentation of glucose the enzyme used is:
+a) Zymase b) Lipase
+c) Invertase d) Amylase
+26. What is the empirical formula of a hydrocarbon containing 75 % carbon?
+a) C2H4 b) CH4
+c) C3H9 d) C2H6
+27. Example of amphoteric oxide is:
+a) SO2 b) Na2O
+c) ZnO d) NO
+28. Colour pigments can be separated by:
+a) Filtration b) Distillation
+c) Chromatography d) Sublimation
+29. Which one is manufactured from sea weeds?
+a) F2 b) I2
+c) Cl2 d) Br
+30. These used in welding of iron or steel is:
+a) Mechane b) Ethane
+c) Ethylene d) Acetylene
+31. A patent is generally advised to specially consume more meat, lentils, milk and egg in diet only when he/she
+suffers, from:
+a) Rickets b) Kwashiworker
+c) Anaemia d) Scurvey
+32. Tetanus disease is:
+a) Viral b) Bacterial
+c) Fungal d) None
+33. Kind of Epithelium in inner lining of blood vessels?
+a) Cuboidal epithelium
+b) Columnar
+c) Ciliated columnar
+d) Squammous epithelium
+34. Which part of brain is involved in regulating body temperature?
+a) Medulla oblongata
+b) Cerebrum
+c) Cerebellum
+d) Hypothalamus
+35. Antibiotic was coined by:
+a) Pasteur b) Edward Jenner
+c) Fleming d) Salman Waksman
+36. Not a feaure of Annelida?
+a) Closed circulatory system
+b) Segmentation
+c) Pseudocoelom
+d) Ventral nerve cord
+37. Evolutionary history of organism is:
+a) Phylogeny b) Ancestry
+c) Paleontology d) Ontogeny
+38. HIV that caused AIDS 1st start destroying:
+a) B-Lymphocytes b) Platelets
+c) Leucocytes d) Helper T-cells
+39. Blood calcium level is lowered by deficiency of:
+a) Parathormone b) Calcitonin
+c) Thyroxine d) Both b and c
+40. 1st healthy mammal to be cloned is:
+a) Molly sheep b) Dolly sheep
+c) Polly sheep d) Monkey
+41. Ribosome can also be called:
+a) Microsome b) Oxyosome
+c) Dictyosome d) Ribonucleotide
+42. The first transgenic crop is:
+a) Tobaccoo b) Wheat
+c) Tomato d) sMaize
+43. Tobacoo mosaic virus is:
+a) Rod shaped b) Brick shaped
+c) Spherical d) None
+44. Bacterial DNA is identified as:
+a) DNA only
+b) DNA with histone
+c) DNA without histone
+d) DNA and RNA
+45. Which is sensitive to SO2 pollution?
+a) Lichens b) Algae
+c) Mosses d) Gymnosperms
+46. Cause of motility in male gamete is:
+a) Photo taxis b) Chemo taxis
+c) Thermo taxis d) Thermotropism
+47. Milk is purified by:
+a) Fermentation b) Pasteurisation
+c) Preservation d) Sterilisation
+48. Pollution can bring change in:
+a) Abiotic environment
+b) Biotic environment
+c) Both a and. b
+d) Animals
+49. BOD is:
+a) Biological oxygen deficit
+b) Biosphere oxygen demand
+c) Biological oxygen demand
+d) None
+50. Which inn of cinchona is used as a drug?
+a) Bark b) Leaf
+c) Pericarp d) Endosperm
+81. His pocket has been picked. It means:
+a) Picked his been his pocket
+b) They have his pocket picked.
+c) Someone has picked his pocket.
+d) Picking has been done to his pocket.
+82. More serious from the parent's point of view than the increasing expenditure on children's education is finding a
+good school. The more serious thing is:
+a) The parent’s point of view
+b) finding a good school
+c) Children’s education
+d) increasing education
+83. Here's may report ----- it at last.
+a) I finish b) I finished
+c) I’ve finished d) I'm finished
+84. Your parents are very upset with you and you are regretting over the wrong doing.
+a) I wish they would understand me
+b) I wish I could tell them the truth
+c) I wish I hadn’t disobeyed them
+d) I wish they were happy
+85. He gave up ............
+a) Smoke b) to smoke
+c) Smoking d) to smoke
+86. The professor and psychologist......... come.
+a) has b) have
+c) has d) was
+87. Where's Robert? ........ a shower?
+a) Does he have b) Has he
+c) Has fiant d) Is he having
+88. An Englishman killed his mother for trying to save an Indian's life. The person trying to save the Indian's
+life..........
+a) was an English woman
+b) was saved
+c) was Killed
+d) was an Indian
+89. I didn’t use smoke in the past but these days I'm used to.......
+a) Smoke b) smokes
+c) Smoked d) smoking
+90. Indirect speech of: She said. "Good bye, my friend.”
+a) She told her friends good bye.
+b) She bade good bye to he friends.
+c) She shouted good bye to her friends.
+d) She shouted good bye to her ends.
+91. Fate smiles...... him in all his ventures.
+a) upon b) at
+c) with d) for
+92. The downfall of this dictatorial regime is ...
+a) imminent b) eminent
+c) urgent d) optional
+93. Unexpected change in somebody's fortune is called :
+a) Vicissitude b) Verisimilitude
+c) Fortunate d) Catastrophe
+94. It's time to take tea. It means .............
+a) tea should be taken
+b) tea is to be taken
+c) it's time for tea to be taken
+d) tea should be taken now
+95. When I looked round the door, the baby ......... quietly.
+a) is sleeping b) slept
+c) was sleeping d) were sleeping
+96. ......... a party next Friday. We've sent out the invitations.
+a) We had b) We have
+c) We'll have d) We are having
+97. By 2020, I..... Bachelor's in science.
+a) complete
+b) an completing
+c) will complete
+d) will have completed
+98. Julia was out of breathe because .........
+a) she had been running
+b) She did run
+c) she's been running
+d) she’s run
+99. This house is ...of the two .
+a) the best b) the better that
+c) the better d) better
+100. At this time tomorrow....... Over the Pacific Ocean.
+a. we flying b. we’ll fly
+c. we’ll be flying d. we to fly
+
+
+Answers:
+1.a 2.a 3.d 4.b 5.d 6.d 7.b 8.a 9.d 10.c
+11.b 12.a 13.a 14.d 15.c 16.c 17.c 18.c 19.b 20.a
+21.c 22.d 23.a 24.a 25.a 26.b 27.c 28.c 29.b 30.d
+31.b 32.b 33.d 34.d 35.d 36.c 37.a 38.d 39.a 40.b
+41.a 42.a 43.a 44.c 45.a 46.b 47.b 48.c 49.c 50.a
+51.c 52.a 53.d 54.c 55.c 56.a 57.a 58.a 59.c 60.c
+61.b 62.c 63.a 64.b 65.a 66.c 67.b 68.c 69.b 70.a
+71.d 72.c 73.b 74.a 75.a 76.b 77.c 78.c 79.a 80.b
+81.c 82.b 83.c 84.c 85.c 86.a 87.d 88.c 89.d 90.b
+91.a 92.a 93.a 94.c 95.c 96.d 97.d 98.a 99.d 100.c

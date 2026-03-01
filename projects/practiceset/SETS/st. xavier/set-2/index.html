@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>St. Xavier's Entrance Exam - Set 1</title>
+    <title>St. Xavier's Entrance Exam - Set 2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -365,7 +365,7 @@
 
     <header>
         <h1>St. Xavier's Entrance Exam</h1>
-        <p>Set 1</p>
+        <p>Set 2</p>
         <p class="disclaimer-text">📋 Questions related to mathematics are currently not available but you can check those from the file given at the end of the test.</p>
     </header>
 
@@ -391,7 +391,6 @@
     <script src="./questions.js"></script>
     <script>
         (() => {
-            // Starfield background
             const canvas = document.getElementById('starfield');
             const ctx = canvas.getContext('2d');
             const stars = [];
@@ -461,7 +460,6 @@
             createStars();
             draw();
 
-            // Render all questions dynamically from questions.js
             const container = document.getElementById('questionsContainer');
             questionsData.forEach((item, idx) => {
                 const div = document.createElement('div');
@@ -472,7 +470,7 @@
                     <div class="options">
                         ${item.opts.map((opt, optIdx) => `
                             <label class="option">
-                                <input type="radio" name="q${idx}" value="${optIdx}">
+                                <input type="radio" name="q${item.no}" value="${optIdx}">
                                 <span>${String.fromCharCode(97 + optIdx)}) ${opt}</span>
                             </label>
                         `).join('')}
@@ -501,9 +499,9 @@
             document.getElementById('testForm').addEventListener('submit', (e) => {
                 e.preventDefault();
                 let score = 0;
-                questionsData.forEach((item, idx) => {
-                    const selected = document.querySelector(`input[name="q${idx}"]:checked`);
-                    if (selected && parseInt(selected.value) === item.ans) {
+                questionsData.forEach((item) => {
+                    const selected = document.querySelector(`input[name="q${item.no}"]:checked`);
+                    if (selected && parseInt(selected.value, 10) === item.ans) {
                         score++;
                     }
                 });
@@ -518,24 +516,25 @@
             });
 
             document.getElementById('resetBtn').addEventListener('click', () => {
-                document.querySelectorAll(`input[type="radio"]`).forEach(radio => {
+                document.querySelectorAll('input[type="radio"]').forEach((radio) => {
                     radio.checked = false;
                     radio.disabled = false;
                 });
-                document.querySelectorAll('.option').forEach(opt => {
+
+                document.querySelectorAll('.option').forEach((opt) => {
                     opt.classList.remove('correct', 'wrong');
                 });
+
                 document.getElementById('result').classList.remove('show');
                 document.getElementById('showAnswersBtn').classList.remove('show');
                 window.scrollTo({ top: document.getElementById('questionsContainer').offsetTop - 100, behavior: 'smooth' });
             });
 
-
             document.getElementById('showAnswersBtn').addEventListener('click', () => {
-                questionsData.forEach((item, qIdx) => {
-                    const allOptions = document.querySelectorAll(`input[name="q${qIdx}"]`);
-                    const selectedRadio = document.querySelector(`input[name="q${qIdx}"]:checked`);
-                    const selectedIdx = selectedRadio ? parseInt(selectedRadio.value) : -1;
+                questionsData.forEach((item) => {
+                    const allOptions = document.querySelectorAll(`input[name="q${item.no}"]`);
+                    const selectedRadio = document.querySelector(`input[name="q${item.no}"]:checked`);
+                    const selectedIdx = selectedRadio ? parseInt(selectedRadio.value, 10) : -1;
 
                     allOptions.forEach((radio, optIdx) => {
                         radio.disabled = true;
@@ -549,6 +548,7 @@
                         }
                     });
                 });
+
                 window.scrollTo({ top: document.getElementById('questionsContainer').offsetTop - 100, behavior: 'smooth' });
             });
         })();
